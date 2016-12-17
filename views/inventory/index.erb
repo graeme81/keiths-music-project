@@ -1,0 +1,22 @@
+
+<h1>Inventory</h1>
+
+<table>
+  <tr>
+    <th>Artist</th>
+    <th></th>
+    <th>Album</th>
+    <th></th>
+    <th>Quantity</th>
+  </tr>
+  <% for info in @info %>
+ 
+  <tr>
+    <td><%= info['name'] %></td>
+    <td>|</td>
+    <td><%= info['title'] %></td>
+    <td>|</td>
+    <td><%= info['quantity'] %></td>
+  </tr>
+  <% end %>
+</table>
