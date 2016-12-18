@@ -7,16 +7,26 @@
     <th></th>
     <th>Album</th>
     <th></th>
+    <th>Genre</th>
+    <th></th>
     <th>Quantity</th>
+    <th></th>
+    <th>Stock Level</th>
   </tr>
+  
+
   <% for info in @info %>
- 
   <tr>
     <td><%= info['name'] %></td>
     <td>|</td>
     <td><%= info['title'] %></td>
     <td>|</td>
+    <td><%= info['genre'] %></td>
+    <td>|</td>
     <td><%= info['quantity'] %></td>
+    <td>|</td>
+    <td><%= info[:stock_level]%></td>
+   
   </tr>
   <% end %>
 </table>
