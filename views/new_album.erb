@@ -1,0 +1,27 @@
+<h1>New Stock</h1>
+
+<form action="../music/new_album" method="post"> 
+
+    <label>
+    Artist:
+      <select name="artist_id">
+        <% for artist in @artists %>
+        <option value="<%= artist.id %>"><%= artist.name %></option>
+        <% end %>
+      </select>
+    </label>
+  <label>
+    Album Title:
+    <input type:"text" name="title">
+  </label>
+  <label>
+    Genre:
+    <input type:"text" name="genre">
+  </label>
+  <label>
+    Quantity:
+    <input type="number" name="quantity"/>
+  </label>
+
+  <input type="submit" value="Add Album"/>
+</form>

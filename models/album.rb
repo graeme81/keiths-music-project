@@ -1,14 +1,15 @@
 require_relative( '../db/sql_runner')
+require ('pry')
 
 class Album
 
-  attr_reader :title, :genre, :quantity, :id, :artist_id 
+  attr_reader :title, :genre, :id, :artist_id, :quantity
 
   def initialize( options )
     @id = nil || options['id'].to_i
     @title = options['title']
     @genre = options['genre']
-    @quantity = options['quantity']
+    @quantity = options['quantity'].to_i
     @artist_id = options['artist_id']
   end
 
@@ -31,6 +32,25 @@ class Album
     sql = "SELECT * FROM albums"
     results = SqlRunner.run( sql )
     return results.map { |i| Album.new( i ) }
+  end
+
+  def self.find(id)
+    sql = "SELECT * FROM albums
+           WHERE id = #{id}"
+
+
+    albums = SqlRunner.run(sql)
+    return Album.new(albums).first
+  end
+
+  def self.update(options)
+    sql = " UPDATE albums SET 
+            title = '#{options[title]}'
+            genre = '#{options[genre]}'
+            quantity = '@info['quantity']
+            WHERE id = '#{options[id]}' 
+            "
+    SqlRunner.run(sql)
   end
 
 end

@@ -24,5 +24,11 @@ class Artist
     SqlRunner.run(sql)
   end
 
+  def self.all()
+    sql = "SELECT * FROM artists ORDER BY name ASC"
+    results = SqlRunner.run(sql)
+    return results.map { |hash| Artist.new( hash ) }
+  end
+
   
 end
