@@ -1,10 +1,7 @@
-<h1><u>Edit Stock Levels</u></h1>
+<h1><u>Edit Details Levels</u></h1>
 
-<form action="/music/<%= info['id'] %>" method="post"> 
-  <label>
-    Artist:
-    <input type:"text" name="name" value= "<%= @album.name %>">
-  </label>
+<form action="/music/<%= @album.id %>" method="post"> 
+ 
   <label>
     Album:
     <input type:"text" name="title" value= "<%= @album.title %>">
@@ -17,5 +14,5 @@
     Quantity:
     <input type="number" name="quantity" value= "<%= @album.quantity %>"/>
   </label>
-  <input type = "submit" value= "Update Order"/>
+  <input type = "submit" value= "Update Record"/>
 </form>

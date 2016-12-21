@@ -38,17 +38,17 @@ class Album
     sql = "SELECT * FROM albums
            WHERE id = #{id}"
 
-
     albums = SqlRunner.run(sql)
-    return Album.new(albums).first
+    return Album.new(albums.first)
   end
 
-  def self.update(options)
+  def self.update( options )
+    
     sql = " UPDATE albums SET 
-            title = '#{options[title]}'
-            genre = '#{options[genre]}'
-            quantity = '@info['quantity']
-            WHERE id = '#{options[id]}' 
+            title = '#{options['title']}',
+            genre = '#{options['genre']}',
+            quantity = #{options['quantity']}
+            WHERE id = #{options['id']} 
             "
     SqlRunner.run(sql)
   end

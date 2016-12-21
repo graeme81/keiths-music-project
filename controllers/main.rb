@@ -10,15 +10,11 @@ get '/music/inventory' do
   erb ( :"inventory/index" )
 end
 
-post '/music/inventory' do
-# code for updating stock
-  album = Album.find(params[:id])
-  
-  album.quantity = params[:quantity].to_i
+# post '/music/inventory' do
 
-  album.update()
-  redirect to('/music/inventory')
-end
+#   Album.update( params )
+#   redirect to('/music/inventory')
+# end
 
 get '/music/add' do 
   erb(:add)
@@ -48,8 +44,11 @@ post '/music/new_album' do
 end
 
 get '/music/:id/edit' do
+  @album = Album.find(params[:id])
   erb(:edit)
 end
+
+
 
 get '/music/artists' do
   @artists = Artist.all()
@@ -69,4 +68,9 @@ get '/music/artists/:id' do
    end
 
   erb(:artists_albums)
+end
+
+post '/music/:id' do
+  Album.update( params )
+  redirect to "/music/inventory"
 end
