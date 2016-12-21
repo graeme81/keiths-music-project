@@ -7,15 +7,15 @@
   <table>
     <tr>
       <th>Artist</th>
-      <th></th>
+      
       <th>Album</th>
-      <th></th>
+      
       <th>Genre</th>
-      <th></th>
+      
       <th>Quantity</th>
-      <th></th>
+      
       <th>Stock Level</th>
-      <th></th>
+      
       <th>Adjust Stock</th>
       
     </tr>
@@ -24,15 +24,15 @@
     <% for @album in @info %>
     <tr>
       <td><%= @album['name'] %></td>
-      <td>|</td>
+      
       <td><%= @album['title'] %></td>
-      <td>|</td>
+      
       <td><%= @album['genre'] %></td>
-      <td>|</td>
+      
       <td><%= @album['quantity'] %></td>
-      <td>|</td>
+      
       <td><%= @album[:stock_level]%></td>
-      <td>|</td>
+      
       <td><a href ="/music/<%= @album['id'] %>/edit">Edit Stock</a></td>
 
         

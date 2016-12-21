@@ -10,12 +10,6 @@ get '/music/inventory' do
   erb ( :"inventory/index" )
 end
 
-# post '/music/inventory' do
-
-#   Album.update( params )
-#   redirect to('/music/inventory')
-# end
-
 get '/music/add' do 
   erb(:add)
 end
@@ -47,8 +41,6 @@ get '/music/:id/edit' do
   @album = Album.find(params[:id])
   erb(:edit)
 end
-
-
 
 get '/music/artists' do
   @artists = Artist.all()

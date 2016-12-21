@@ -1,0 +1,65 @@
+* {
+    text-align: center;
+    margin: auto;
+    font-family: verdana;
+    color: ivory;
+    color: black;
+}
+
+body{
+  background-image:  url("keithbg.jpg") ;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+nav {
+  text-align: left;
+  color: white;
+}
+
+td {
+   border: 1px solid black;
+   border-collapse: collapse;
+}
+
+th {
+  border: 1px solid black;
+  border-collapse: collapse;
+}
+
+table{
+background-color: ivory;
+}
+
+tr:nth-child(even) {background-color: #f2f2f2}
+
+h2{
+  background-color: ivory;
+}
+
+
+/**********************
+NAV
+**********************/
+
+nav ul {
+  display: block;
+  height: 50px;
+  background-color: orange;
+}
+
+nav li {
+  list-style: none;
+  display: inline-block;
+  width: 120px;
+  padding-top: 15px;
+}
+
+nav a {
+  text-decoration: none;
+  color: white;
+}
+
+nav a:hover {
+  color: red;
+}

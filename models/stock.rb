@@ -8,7 +8,8 @@ class Stock
     sql = "SELECT ar.name, al.title, al.genre, al.quantity, al.id
            FROM albums al
            LEFT JOIN artists ar
-           ON al.artist_id = ar.id"
+           ON al.artist_id = ar.id
+           ORDER BY al.quantity DESC, ar.name "
     records = SqlRunner.run( sql )
 
     @info = Array.new
